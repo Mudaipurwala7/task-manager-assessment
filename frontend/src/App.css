@@ -1,0 +1,161 @@
+/* App.css */
+:root {
+  --primary: #4F46E5;
+  --primary-hover: #4338CA;
+  --danger: #EF4444;
+  --danger-hover: #DC2626;
+  --bg-color: #F3F4F6;
+  --card-bg: #FFFFFF;
+  --text-main: #1F2937;
+  --border: #E5E7EB;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: var(--primary);
+  margin-bottom: 30px;
+}
+
+/* Card Layout */
+.card {
+  background: var(--card-bg);
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+/* Form Styles */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="text"], 
+textarea, 
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  font-family: inherit;
+  box-sizing: border-box; /* Ensures padding doesn't break width */
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
+}
+
+textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+/* Buttons */
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.btn-danger {
+  background-color: var(--danger);
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: var(--danger-hover);
+}
+
+.btn-secondary {
+  background-color: #E5E7EB;
+  color: #374151;
+  margin-left: 10px;
+}
+
+.btn-secondary:hover {
+  background-color: #D1D5DB;
+}
+
+/* Table Styles */
+.table-container {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--card-bg);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+th {
+  background-color: #F9FAFB;
+  font-weight: bold;
+}
+
+tr:hover {
+  background-color: #F9FAFB;
+}
+
+.status-badge {
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.85em;
+  font-weight: bold;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  gap: 15px;
+}
+
+.pagination button:disabled {
+  background-color: #E5E7EB;
+  color: #9CA3AF;
+  cursor: not-allowed;
+}
