@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import './App.css'; // Importing our new styles
+import './App.css'; 
 
 function App() {
   const [title, setTitle] = useState('');
@@ -30,7 +30,7 @@ function App() {
     fetchTasks();
   }, [page, search]);
 
-  // THE BUG FIX: A helper function to completely clear the form state
+  
   const resetForm = () => {
     setTitle('');
     setDescription('');
@@ -56,7 +56,7 @@ function App() {
       } else {
         await axios.post(API_URL, taskData);
       }
-      resetForm(); // Use the new function to clear everything after saving
+      resetForm(); 
       fetchTasks();
     } catch (err) {
       setError('Failed to save task. Check backend validation.');
@@ -81,7 +81,7 @@ function App() {
     setEditingId(task.id);
   };
 
-  // Helper function to color-code statuses
+  
   const getStatusColor = (taskStatus) => {
     if (taskStatus === 'Completed') return { background: '#D1FAE5', color: '#065F46' };
     if (taskStatus === 'In Progress') return { background: '#FEF3C7', color: '#92400E' };
@@ -102,7 +102,7 @@ function App() {
             <label>Task Title</label>
             <input 
               type="text" 
-              placeholder="e.g., Fix database connection"
+              placeholder="Add Title"
               value={title} 
               onChange={(e) => setTitle(e.target.value)} 
               required 
@@ -129,7 +129,7 @@ function App() {
             {editingId ? 'Update Task' : 'Save Task'}
           </button>
           {editingId && (
-            /* BUG FIXED: Now calls resetForm() instead of just setEditingId(null) */
+            
             <button type="button" className="btn-secondary" onClick={resetForm}>
               Cancel
             </button>
@@ -137,7 +137,7 @@ function App() {
         </form>
       </div>
 
-      {/* Search and Table Card */}
+      
       <div className="card">
         <div className="form-group">
           <input 
@@ -182,7 +182,7 @@ function App() {
           </table>
         </div>
 
-        {/* Pagination Controls */}
+        
         <div className="pagination">
           <button className="btn-primary" disabled={page === 1} onClick={() => setPage(page - 1)}>
             &larr; Previous
