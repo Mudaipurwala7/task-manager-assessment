@@ -3,7 +3,7 @@ from rest_framework.pagination import PageNumberPagination
 from .models import Task
 from .serializers import TaskSerializer
 
-# Set up Pagination (e.g., 5 tasks per page)
+# Set up Pagination
 class TaskPagination(PageNumberPagination):
     page_size = 5
     page_size_query_param = 'page_size'
